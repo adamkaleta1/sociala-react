@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Notifications } from "./notifications";
 
 const navLinks = [
     { title: "Home", to: "/", icon: "feather-home" },
@@ -85,6 +86,8 @@ export const Layout = ({ children }) => (
                     />
                 </NavLink>
             ))}
+
+            <Notifications />
             {/* /Desktop Menu */}
 
             <Link

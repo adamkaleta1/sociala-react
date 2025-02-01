@@ -22,10 +22,10 @@ export const Notifications = () => {
 
             </span>
             <div
-                className={`dropdown-menu p-4 right-0 rounded-xxl border-0 shadow-lg ${notiClass}`}
+                className={`dropdown-menu p-3 right-0 rounded-xxl border-0 shadow-lg ${notiClass}`}
                 aria-labelledby="dropdownMenu3"
             >
-                <h4 className="fw-700 font-xss p-3">Notification</h4>
+                <h4 className="fw-700 font-xss">Notification</h4>
                 <div className="card bg-transparent-card w-100 border-0 ps-5 mb-3">
                     <img
                         src="assets/images/user.png"

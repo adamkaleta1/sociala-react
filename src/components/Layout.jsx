@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Notifications } from "./notifications";
+import { Notifications } from "./notifications/Notifications";
+import PropTypes from "prop-types"
 
 const navLinks = [
     { title: "Home", to: "/", icon: "feather-home" },
@@ -70,37 +71,37 @@ export const Layout = ({ children }) => (
             activeClassName="active"
             to="/home"
             className="p-2 text-center ms-3 menu-icon center-menu-icon"
-        >
-            <i className="feather-home font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </NavLink>
-        <NavLink
-            activeClassName="active"
-            to="/defaultstorie"
-            className="p-2 text-center ms-0 menu-icon center-menu-icon"
-        >
-            <i className="feather-zap font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </NavLink>
-        <NavLink
-            activeClassName="active"
-            to="/defaultvideo"
-            className="p-2 text-center ms-0 menu-icon center-menu-icon"
-        >
-            <i className="feather-video font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </NavLink>
-        <NavLink
-            activeClassName="active"
-            to="/defaultgroup"
-            className="p-2 text-center ms-0 menu-icon center-menu-icon"
-        >
-            <i className="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </NavLink>
-        <NavLink
-            activeClassName="active"
-            to="/shop2"
-            className="p-2 text-center ms-0 menu-icon center-menu-icon"
-        >
-            <i className="feather-shopping-bag font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </NavLink> */}
+            >
+                <i className="feather-home font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+            </NavLink>
+            <NavLink
+                activeClassName="active"
+                to="/defaultstorie"
+                className="p-2 text-center ms-0 menu-icon center-menu-icon"
+            >
+                <i className="feather-zap font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+            </NavLink>
+            <NavLink
+                activeClassName="active"
+                to="/defaultvideo"
+                className="p-2 text-center ms-0 menu-icon center-menu-icon"
+            >
+                <i className="feather-video font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+            </NavLink>
+            <NavLink
+                activeClassName="active"
+                to="/defaultgroup"
+                className="p-2 text-center ms-0 menu-icon center-menu-icon"
+            >
+                <i className="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+            </NavLink>
+            <NavLink
+                activeClassName="active"
+                to="/shop2"
+                className="p-2 text-center ms-0 menu-icon center-menu-icon"
+            >
+                <i className="feather-shopping-bag font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+            </NavLink> */}
 
             {/* Krótszy zapis powyższego kodu: */}
 
@@ -194,5 +195,9 @@ export const Layout = ({ children }) => (
 
         </div >
         {children}
-    </ Fragment >
+    </Fragment >
 );
+
+Layout.propTypes = {
+    children: PropTypes.node.isRequired,
+};

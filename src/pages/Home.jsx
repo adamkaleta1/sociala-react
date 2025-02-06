@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Layout } from "../components/layout/Layout";
 import { PostView } from "../components/PostView";
 
+import Loader from "../components/Loader";
+
 // const posts = [
 //     {
 //         user: "Zbigniew",
@@ -75,16 +77,30 @@ export const Home = () => {
                 <div className="middle-sidebar-bottom">
                     <div className="middle-sidebar-left">
                         <div className="row feed-body">
-                            <div className="col-xl-8 col-xxl-9 col-lg-8">
+                            {/* <div className="col-xl-8 col-xxl-9 col-lg-8">
                                 {updatedPosts &&
                                     updatedPosts.length > 0 &&
                                     updatedPosts.map((post) =>
                                         <PostView {...post} key={post.user} />)}
                             </div>
+                            {/* powyższy kod możemy zapisać w sposób, jak poniżej. Na początku "updatedPosts", to sprawdzanie, czy ten element w ogóle istnieje. */}
+                            {/* <div className="col-xl-8 col-xxl-9 col-lg-8">
+                                {
+                                    updatedPosts?.length < 0 &&
+                                    updatedPosts.map((post) =>
+                                        <PostView {...post} key={post.user} />)}
+                                <Loader /> */}
+                            {!updatedPosts || updatedPosts.length < 1 ? (
+                                <Loader />
+                            ) : (
+                                updatedPosts.map((post) => (
+                                    <PostView key={post.id} {...post} />
+                                ))
+                            )}
                         </div>
                     </div>
                 </div>
             </div>
-        </Layout>
+        </Layout >
     );
 };

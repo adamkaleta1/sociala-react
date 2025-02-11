@@ -3,6 +3,7 @@ import { Layout } from "../components/layout/Layout";
 import { PostView } from "../components/PostView";
 
 import Loader from "../components/Loader";
+import { Createpost } from "../components/Createposts";
 
 // const posts = [
 //     {
@@ -57,7 +58,7 @@ export const Home = () => {
     const [posts, setPosts] = useState();
 
     useEffect(() => {
-        fetch("https://my.api.mockaroo.com/posts.json?key=6d1737e0")
+        fetch("https://my.api.mockaroo.com/posts.json?key=e464f210")
             .then((response) => response.json())
             .then((posts) => setPosts(posts));
     }, []);
@@ -90,6 +91,7 @@ export const Home = () => {
                                     updatedPosts.map((post) =>
                                         <PostView {...post} key={post.user} />)}
                                 <Loader /> */}
+                            <Createpost />
                             {!updatedPosts || updatedPosts.length < 1 ? (
                                 <Loader />
                             ) : (

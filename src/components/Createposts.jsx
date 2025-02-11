@@ -4,11 +4,15 @@ export const Createpost = () => {
 
     const [message, setMessage] = useState("")
 
+    const [showDropDown, setShowDropDown] = useState(false);
+
     const handleChange = (event) => {
         setMessage(event.target.value)
     };
 
-
+    const handleShowDropDown = () => {
+        setShowDropDown((prevShowDropDown) => !prevShowDropDown);
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -26,7 +30,6 @@ export const Createpost = () => {
             console.error("Failed/error occured");
         }
     };
-
 
     return (
         <div className="card w-full shadow-xss rounded-xll border-0 ps-4 pt-4 pe-4 pb-3 mb-3">
@@ -83,6 +86,57 @@ export const Createpost = () => {
                     <i className="font-md text-warning feather-camera me-2" />
                     <span className="d-none-xs">Feeling/Activity</span>
                 </a>
+                <div
+                    className={`ml-auto cursor-pointer relative `}
+                    id="dropdownMenu4"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    onClick={handleShowDropDown}
+                >
+                    <i className="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss" />
+                    <div
+                        className={`dropdown-menu p-4 right-0 rounded-xxl border-0 shadow-lg w-100 ${showDropDown ? "show" : ""}`}
+                        aria-labelledby="dropdownMenu4"
+                    >
+                        <div className="card-body p-0 flex">
+                            <i className="feather-bookmark text-grey-500 me-3 font-lg" />
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor-pointer">
+                                Save Link
+                                <span className="block font-xssss fw-500 mt-01 lh-3 text-grey-500">
+                                    Save to your saved items
+                                </span>
+                            </h4>
+                        </div>
+                        <div className="card-body p-0 flex">
+                            <i className="feather-alert-circle text-grey-500 me-3 font-lg" />
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor-pointer">
+                                Hide post
+                                <span className="block font-xssss fw-500 mt-01 lh-3 text-grey-500">
+                                    Add this to your saved items
+                                </span>
+                            </h4>
+                        </div>
+                        <div className="card-body p-0 flex">
+                            <i className="feather-alert-octagon text-grey-500 me-3 font-lg" />
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor-pointer">
+                                Hide all from group
+                                <span className="block font-xssss fw-500 mt-01 lh-3 text-grey-500">
+                                    Add this to your saved items
+                                </span>
+                            </h4>
+                        </div>
+                        <div className="card-body p-0 flex">
+                            <i className="feather-lock text-grey-500 me-3 font-lg" />
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor-pointer">
+                                Unfollow group
+                                <span className="block font-xssss fw-500 mt-01 lh-3 text-grey-500">
+                                    Add this to your saved items
+                                </span>
+                            </h4>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     );

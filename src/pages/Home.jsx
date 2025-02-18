@@ -4,6 +4,7 @@ import { PostView } from "../components/PostView";
 
 import Loader from "../components/Loader";
 import { Createpost } from "../components/Createposts";
+import { Storyslider } from "../components/StorySlider";
 
 // const posts = [
 //     {
@@ -91,6 +92,7 @@ export const Home = () => {
                                     updatedPosts.map((post) =>
                                         <PostView {...post} key={post.user} />)}
                                 <Loader /> */}
+                            <Storyslider />
                             <Createpost />
                             {!updatedPosts || updatedPosts.length < 1 ? (
                                 <Loader />
